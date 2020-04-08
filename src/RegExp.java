@@ -16,7 +16,7 @@ public class RegExp {
    */
   public static String getIpAddress(String text) {
     String result = "";
-    String reg_ex = "([1-9]{1,3}[\\.]){3}[0-9]{1,3}";
+    String reg_ex = "([1-9]{1,3}[\\\\.]){3}[0-9]{1,3}(?=(\\/|\\s|,|$))";
     Pattern pattern = Pattern.compile(reg_ex);
     Matcher matcher = pattern.matcher(text);
     while (matcher.find()){
